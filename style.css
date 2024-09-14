@@ -1,0 +1,149 @@
+/* Reset all margins and paddings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body and overall layout */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #282c34;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}
+
+/* Main title */
+h1 {
+  color: #61dafb;
+  margin-bottom: 30px;
+  font-size: 3rem;
+  letter-spacing: 1px;
+}
+
+/* Message container with New Game button, placed at the top and centered */
+.msg-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 20px;
+  position: absolute; /* Position it at the top */
+  top: 100px; /* Distance from the top */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Adjust for perfect centering */
+}
+
+/* Message display (winner announcement) */
+#msg {
+  font-size: 2rem;
+  color: #ad0000;
+  margin-bottom: 15px;
+  display:center ; /* Initially hidden */
+}
+
+/* Game grid container */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #20232a;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
+  flex-direction: column;
+}
+
+/* Game grid */
+.game {
+  display: grid;
+  grid-template-columns: repeat(3, 120px);
+  grid-template-rows: repeat(3, 120px);
+  gap: 15px;
+}
+
+/* Game cells (boxes) */
+.box {
+  width: 120px;
+  height: 120px;
+  font-size: 3rem;
+  background-color: #61dafb;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #282c34;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.box:hover {
+  background-color: #21a1f1;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Button styling */
+button {
+  padding: 10px 25px;
+  font-size: 1.2rem;
+  background-color: #30a5c5;
+  color: #d0dbf0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+  background-color: #21a1f1;
+  box-shadow: 0 5px 15px rgba(148, 0, 0, 0.2);
+}
+
+/* Reset button styling */
+#reset-btn {
+  margin-top: 25px;
+  background-color: #ff4757;
+  color: white;
+}
+
+#reset-btn:hover {
+  background-color: #ff6b81;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 600px) {
+  /* Resize the title */
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  /* Resize the message container */
+  .msg-container {
+    top: 100px; /* Lower it for mobile */
+  }
+
+  /* Resize the game grid for smaller screens */
+  .game {
+    grid-template-columns: repeat(3, 80px);
+    grid-template-rows: repeat(3, 80px);
+    gap: 10px;
+  }
+
+  /* Resize the game cells for mobile */
+  .box {
+    width: 80px;
+    height: 80px;
+    font-size: 2rem;
+  }
+
+  /* Resize the buttons */
+  button {
+    padding: 8px 20px;
+    font-size: 1rem;
+  }
+
+  /* Adjust the message size */
+  #msg {
+    font-size: 1.5rem;
+  }
+}
